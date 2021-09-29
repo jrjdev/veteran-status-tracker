@@ -1,5 +1,8 @@
 # Olive Helps: Veteran Status Tracker
-Add your description here...
+This is ugly but it works. At this time, no unit tests.
+
+Test operation with data in this file:
+https://raw.githubusercontent.com/department-of-veterans-affairs/vets-api-clients/master/test_accounts/verification_test_accounts.md
 
 ## Requirements
 

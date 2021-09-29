@@ -40,7 +40,7 @@ export default class VetStatusWhisper {
     const firstNameInput = {
       type: whisper.WhisperComponentType.TextInput,
       label: 'First Name',
-      value: this.props.firstName || 'Tamara',
+      value: this.props.firstName || '',
       onChange: (_error, val) => {
         console.log('Text changed: ', val);
         this.update({firstName: val});
@@ -49,7 +49,7 @@ export default class VetStatusWhisper {
     const middleNameInput = {
       type: whisper.WhisperComponentType.TextInput,
       label: 'Middle Name',
-      value: this.props.middleName || 'E',
+      value: this.props.middleName || '',
       onChange: (_error, val) => {
         console.log('Text changed: ', val);
         this.update({middleName: val});
@@ -58,7 +58,7 @@ export default class VetStatusWhisper {
     const lastNameInput = {
       type: whisper.WhisperComponentType.TextInput,
       label: 'Last Name',
-      value: this.props.lastName || 'Ellis',
+      value: this.props.lastName || '',
       onChange: (_error, val) => {
         console.log('Text changed: ', val);
         this.update({lastName: val});
@@ -68,7 +68,7 @@ export default class VetStatusWhisper {
     const ssnInput = {
       type: whisper.WhisperComponentType.TextInput,
       label: 'SSN',
-      value: this.props.ssn || '796130115',
+      value: this.props.ssn || '',
       onChange: (_error, val) => {
         console.log('Text changed: ', val);
         this.update({ssn: val});
@@ -105,7 +105,7 @@ export default class VetStatusWhisper {
         let firstName = this.props.firstName;
         let middleName = this.props.middleName;
         let lastName = this.props.lastName;
-        let ssn = ssnInput.value;
+        
         let gender = genderInputSelect.options[this.props.genderSelected];
 
         if (this.props.dateOfBirth === '') {
@@ -119,10 +119,9 @@ export default class VetStatusWhisper {
             } else {
               this.update({vetStatus: `${firstName} ${middleName} ${lastName} is not a veteran.`});
             }
-            
-            
+                       
         }).catch(err => {
-          console.log('about to update: ' + result);
+          console.log('Could not retrieve value form API: ' + result);
         });
         }
         
